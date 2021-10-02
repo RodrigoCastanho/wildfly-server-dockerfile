@@ -1,0 +1,19 @@
+#Docker-composer exemplo aplicação de teste ignorar esse arquivo.
+version: "3.8"
+services:
+  apptest:
+    image: apptest 
+    container_name: "appTest_1"
+    ports: 
+      - 8084:8080
+      - 9990:9990
+      
+
+  apptest2: 
+    depends_on: 
+      - apptest
+    image: apptest2
+    container_name: "appTest_2"
+    ports: 
+      - 8080:8080
+    
